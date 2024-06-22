@@ -10,3 +10,6 @@ spring:
     url: jdbc:mysql://localhost:3306/meetfootball
     username: ${DB_USERNAME}
     password: ${DB_PASSWORD}
+springdoc:
+  swagger-ui:
+    path: /v1/api-docs/swagger
