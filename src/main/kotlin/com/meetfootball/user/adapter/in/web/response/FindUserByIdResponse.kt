@@ -6,7 +6,7 @@ import com.meetfootball.user.application.domain.entity.User
 
 data class FindUserByIdResponse(
     private val result: ResultEntity.Success<User>
-): ApiResponse<User>(result) {
+): ApiResponse() {
     val name: String = result.data.name
 
     val email: String = result.data.email
