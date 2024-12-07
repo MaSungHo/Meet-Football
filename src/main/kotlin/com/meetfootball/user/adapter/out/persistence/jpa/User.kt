@@ -1,4 +1,4 @@
-package com.meetfootball.user.adapter.out.persistence
+package com.meetfootball.user.adapter.out.persistence.jpa
 
 import com.meetfootball.common.jpa.BaseJpaEntity
 import jakarta.persistence.Column
@@ -7,7 +7,7 @@ import jakarta.persistence.Table
 
 @Entity
 @Table(name = "users")
-class JpaUser(
+class User(
     @Column
     val name: String,
 

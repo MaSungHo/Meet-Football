@@ -1,4 +1,4 @@
-package com.meetfootball.user.adapter.out.persistence
+package com.meetfootball.user.adapter.out.persistence.jpa
 
 import com.meetfootball.common.adapter.Persistence
 import com.meetfootball.user.application.domain.entity.User
@@ -6,8 +6,8 @@ import com.meetfootball.user.application.port.out.FindUserByIdDbPort
 import org.springframework.data.repository.findByIdOrNull
 
 @Persistence
-class FindUserByIdJpaAdapter(
-    private val jpaUserRepository: JpaUserRepository
+class FindUserByIdAdapter(
+    private val jpaUserRepository: UserRepository
 ): FindUserByIdDbPort {
     override fun findUserById(id: Long): User? {
         val jpaUser = this.jpaUserRepository.findByIdOrNull(id)
