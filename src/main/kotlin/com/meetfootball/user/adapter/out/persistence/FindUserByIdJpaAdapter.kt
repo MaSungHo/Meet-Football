@@ -1,11 +1,11 @@
 package com.meetfootball.user.adapter.out.persistence
 
-import com.meetfootball.common.annotation.PersistenceAdapter
+import com.meetfootball.common.adapter.Persistence
 import com.meetfootball.user.application.domain.entity.User
 import com.meetfootball.user.application.port.out.FindUserByIdDbPort
 import org.springframework.data.repository.findByIdOrNull
 
-@PersistenceAdapter
+@Persistence
 class FindUserByIdJpaAdapter(
     private val jpaUserRepository: JpaUserRepository
 ): FindUserByIdDbPort {

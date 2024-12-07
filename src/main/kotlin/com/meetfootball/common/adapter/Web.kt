@@ -1,4 +1,4 @@
-package com.meetfootball.common.annotation
+package com.meetfootball.common.adapter
 
 import org.springframework.core.annotation.AliasFor
 import org.springframework.web.bind.annotation.RequestMapping
@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController
 @MustBeDocumented
 @RestController
 @RequestMapping
-annotation class WebAdapter(
+annotation class Web(
     @get:AliasFor(annotation = RestController::class)
     val value: String = "",
 

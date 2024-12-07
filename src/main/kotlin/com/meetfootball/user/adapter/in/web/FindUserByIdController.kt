@@ -1,6 +1,6 @@
 package com.meetfootball.user.adapter.`in`.web
 
-import com.meetfootball.common.annotation.WebAdapter
+import com.meetfootball.common.adapter.Web
 import com.meetfootball.common.response.ApiResponse
 import com.meetfootball.common.response.CustomResponseEntity
 import com.meetfootball.user.adapter.`in`.web.response.FindUserByIdResponse
@@ -10,7 +10,7 @@ import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 
-@WebAdapter(path = "/api/users")
+@Web(path = "/api/users")
 class FindUserByIdController(
     private val findUserByIdUseCase: FindUserByIdUseCase
 ) {

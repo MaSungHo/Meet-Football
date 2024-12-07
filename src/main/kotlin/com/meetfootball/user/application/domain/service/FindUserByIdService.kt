@@ -1,6 +1,6 @@
 package com.meetfootball.user.application.domain.service
 
-import com.meetfootball.common.annotation.UseCase
+import com.meetfootball.common.adapter.UseCase
 import com.meetfootball.user.application.domain.entity.ErrorEntity
 import com.meetfootball.user.application.domain.entity.ResultEntity
 import com.meetfootball.user.application.domain.entity.User
