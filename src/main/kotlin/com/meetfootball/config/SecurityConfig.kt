@@ -1,4 +1,4 @@
-package com.meetfootball.common.config
+package com.meetfootball.config
 
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration

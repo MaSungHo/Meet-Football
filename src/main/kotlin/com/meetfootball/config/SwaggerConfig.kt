@@ -1,4 +1,4 @@
-package com.meetfootball.common.config
+package com.meetfootball.config
 
 import io.swagger.v3.oas.models.OpenAPI
 import io.swagger.v3.oas.models.info.Info
