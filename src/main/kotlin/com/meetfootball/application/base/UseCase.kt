@@ -1,4 +1,4 @@
-package com.meetfootball.adapter.base
+package com.meetfootball.application.base
 
 import org.springframework.core.annotation.AliasFor
 import org.springframework.stereotype.Component
