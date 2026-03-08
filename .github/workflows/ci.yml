@@ -24,23 +24,3 @@ jobs:
 
       - name: Run Unit Tests with Gradle
         run: ./gradlew test
-
-      - name: Send Email on Failure
-        if: failure()
-        uses: dawidd6/action-send-mail@v3
-        with:
-          server_address: smtp.gmail.com
-          server_port: 465
-          username: ${{ secrets.MAIL_USERNAME }}
-          password: ${{ secrets.MAIL_PASSWORD }}
-          subject: "❌ [CI Failed] ${{ github.repository }} - ${{ github.ref_name }}"
-          to: ${{ github.event.pusher.email }}
-          from: GitHub Actions CI
-          body: |
-            테스트 실패 알림입니다.
-
-            - Repository: ${{ github.repository }}
-            - Branch: ${{ github.ref_name }}
-            - Committer: ${{ github.actor }}
-            - Commit Message: ${{ github.event.head_commit.message }}
-            - Log Link: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
