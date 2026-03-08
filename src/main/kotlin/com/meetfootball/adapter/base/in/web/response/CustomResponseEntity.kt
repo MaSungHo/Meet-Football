@@ -6,12 +6,13 @@ import org.springframework.http.ResponseEntity
 
 class CustomResponseEntity {
     companion object {
-        inline fun <reified T, reified U: ApiResponse> toResponse(
-            result: Result<T>
+        fun <T> toResponse(
+            result: Result<T>,
+            successMapper: (T) -> ApiResponse,
         ): ResponseEntity<ApiResponse> {
             return when (result) {
-                is Result.Success<T> -> ResponseEntity(U::class.constructors.first().call(result), HttpStatus.OK)
-                is Result.Fail<T> -> ResponseEntity(ExceptionResponse(result), HttpStatus.valueOf(result.error.statusCode))
+                is Result.Success -> ResponseEntity(successMapper(result.data), HttpStatus.OK)
+                is Result.Fail -> ResponseEntity(ExceptionResponse(result), HttpStatus.valueOf(result.error.statusCode))
             }
         }
     }
