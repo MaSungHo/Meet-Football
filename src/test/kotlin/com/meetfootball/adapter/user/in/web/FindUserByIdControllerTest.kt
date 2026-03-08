@@ -4,15 +4,18 @@ import com.meetfootball.application.base.Error
 import com.meetfootball.application.base.Result
 import com.meetfootball.application.user.domain.entity.UserEntity
 import com.meetfootball.application.user.port.`in`.FindUserByIdUseCase
+import com.meetfootball.config.SecurityConfig
 import org.junit.jupiter.api.Test
 import org.mockito.BDDMockito.given
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest
 import org.springframework.boot.test.mock.mockito.MockBean
+import org.springframework.context.annotation.Import
 import org.springframework.test.web.servlet.MockMvc
 import org.springframework.test.web.servlet.get
 
 @WebMvcTest(FindUserByIdController::class)
+@Import(SecurityConfig::class)
 class FindUserByIdControllerTest {
 
     @Autowired
